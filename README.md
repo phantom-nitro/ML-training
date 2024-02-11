@@ -1,13 +1,13 @@
 # mlp
 
-##svm_classification.py
-###model:
+## svm_classification.py
+### model:
   SVC(kernel='linear', C=1)
-###Dataset: 
+### Dataset: 
   iris data
-###Visualization/statistical measure of data: 
+### Visualization/statistical measure of data: 
   sns.Facetgrid
-###Evaluation: 
+### Evaluation: 
   metrics.classification_report (has precision,recall,f1-score)
   metrics.confusion_matrix
 
