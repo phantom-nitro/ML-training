@@ -2,14 +2,14 @@
 
 ## svm_classification.py
 ### model:
-  SVC(kernel='linear', C=1)
+  - SVC(kernel='linear', C=1)
 ### Dataset: 
-  iris data
+  - iris data
 ### Visualization/statistical measure of data: 
-  sns.Facetgrid
+  - sns.Facetgrid
 ### Evaluation: 
-  metrics.classification_report (has precision,recall,f1-score)
-  metrics.confusion_matrix
+  - metrics.classification_report (has precision,recall,f1-score)
+  - metrics.confusion_matrix
 
 ## diabetes_prediction.py
 ### model:
