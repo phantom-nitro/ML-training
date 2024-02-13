@@ -49,3 +49,16 @@
   - vectorizer = TfidfVectorizer() - converting text to numerical data (term frequency-inverse document frequency) quantify the importance or relevance of string representations (words, phrases, lemmas, etc) in a document amongst a collection of documents
 ### Evaluation: 
   - accuracy_score(X_train_prediction, Y_train)
+
+## loan_status_prediction.py
+### model:
+  - svm.SVC(kernel="linear")
+### Visualization/statistical measure of data:
+  - loan_dataset["Dependents"].value_counts()
+  - sns.countplot(x="Education", hue = "Loan_Status", data = loan_dataset)
+### data preprocessing:
+  - loan_dataset.isnull().sum() - counts the number of missing values in all columns
+  - loan_dataset.dropna() - removes null value rows
+  - loan_dataset.replace({"Married":{"No":0,"Yes":1}, "Gender":{"Male":1,"Female":0},"Self_Employed":{"No":0,"Yes":1}, "Property_Area":{"Rural":0,"Semiurban":1,"Urban":2}, "Education":{"Graduate":1, "Not Graduate":0}},inplace=True) - convert categorical columns to numerical values
+### Evaluation: 
+  - accuracy_score(X_train_prediction, Y_train)
