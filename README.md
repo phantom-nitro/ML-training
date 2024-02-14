@@ -62,3 +62,18 @@
   - loan_dataset.replace({"Married":{"No":0,"Yes":1}, "Gender":{"Male":1,"Female":0},"Self_Employed":{"No":0,"Yes":1}, "Property_Area":{"Rural":0,"Semiurban":1,"Urban":2}, "Education":{"Graduate":1, "Not Graduate":0}},inplace=True) - convert categorical columns to numerical values
 ### Evaluation: 
   - accuracy_score(X_train_prediction, Y_train)
+
+## car_price_prediction.py
+### model:
+  - LinearRegression()
+  - Lasso()
+### Visualization/statistical measure of data:
+  - car_dataset.info()
+  - car_dataset.describe()
+  - car_dataset.isnull().sum()
+  - car_dataset["Fuel_Type"].value_counts())
+### data preprocessing:
+  - car_dataset.replace({"Fuel_Type":{"Petrol":0,"Diesel":1,"CNG":2}},inplace=True) - replace categorical data to numerical data
+### Evaluation: 
+  - linear_test_score=metrics.r2_score(Y_test,linear_test_pred)
+  - lasso_test_score=metrics.r2_score(Y_test,lasso_test_pred)
