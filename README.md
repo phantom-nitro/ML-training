@@ -77,3 +77,15 @@
 ### Evaluation: 
   - linear_test_score=metrics.r2_score(Y_test,linear_test_pred)
   - lasso_test_score=metrics.r2_score(Y_test,lasso_test_pred)
+
+## gold_price_prediction.py
+### model:
+  - RandomForestRegressor(n_estimators=100)
+### Visualization/statistical measure of data:
+  - gold_price.describe()
+  - sns.heatmap(correlation,cbar=True, square=True,fmt='.1f',annot=True,annot_kws={'size':8},cmap='Reds')
+  - sns.distplot(gold_price['GLD'],color='red') - Distribution plot for Gold
+  - plt.plot(Y_test,color='red',label='Actual value')
+  - plt.plot(test_prediction,color='green',label='Predicted value')
+### Evaluation: 
+  - test_error_score=metrics.r2_score(Y_test,test_prediction)
