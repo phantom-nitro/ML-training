@@ -89,3 +89,17 @@
   - plt.plot(test_prediction,color='green',label='Predicted value')
 ### Evaluation: 
   - test_error_score=metrics.r2_score(Y_test,test_prediction)
+
+## credit_card_fraud_detection.py
+### model:
+  - LogisticRegression()
+### Visualization/statistical measure of data:
+  - creditcard_dataset.describe()
+  - creditcard_dataset.info()
+### data preprocessing:
+  - legit= creditcard_dataset[creditcard_dataset['Class'] == 0]
+  - fraud= creditcard_dataset[creditcard_dataset['Class'] == 1]
+  - legit_undersample = legit.sample(n=492) - Undersample data
+### Evaluation: 
+  - train_data_accuracy = metrics.accuracy_score(train_data_prediction,Y_train)
+  - test_data_accuracy = metrics.accuracy_score(test_data_prediction,Y_test)
