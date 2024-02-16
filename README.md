@@ -91,6 +91,8 @@
   - test_error_score=metrics.r2_score(Y_test,test_prediction)
 
 ## credit_card_fraud_detection.py
+### dataset:
+  - https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 ### model:
   - LogisticRegression()
 ### Visualization/statistical measure of data:
@@ -103,3 +105,20 @@
 ### Evaluation: 
   - train_data_accuracy = metrics.accuracy_score(train_data_prediction,Y_train)
   - test_data_accuracy = metrics.accuracy_score(test_data_prediction,Y_test)
+
+## medical_insurance_prediction.py
+### model:
+  - LinearRegression()
+### Visualization/statistical measure of data:
+  - insurance.info()
+  - insurance.describe()
+  - sns.distplot(insurance['age'])
+  - sns.countplot(x='sex',data=insurance)
+  - sns.distplot(insurance['bmi'])
+  - sns.distplot(insurance['children'])
+  - sns.countplot(x='smoker',data=insurance)
+### data preprocessing:
+  - insurance.replace({'sex':{'male':1,'female':0},'smoker':{'yes':1,'no':0},'region':{'southeast':0,'southwest':1,'northea    st':2,'northwest':3}},inplace=True)
+### Evaluation: 
+  - train_accuracy = metrics.r2_score(Y_train,train_prediction)
+  - test_accuracy = metrics.r2_score(Y_test,test_prediction)
