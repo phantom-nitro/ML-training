@@ -118,7 +118,7 @@
   - sns.distplot(insurance['children'])
   - sns.countplot(x='smoker',data=insurance)
 ### data preprocessing:
-  - insurance.replace({'sex':{'male':1,'female':0},'smoker':{'yes':1,'no':0},'region':{'southeast':0,'southwest':1,'northea    st':2,'northwest':3}},inplace=True)
+  - insurance.replace({'sex':{'male':1,'female':0},'smoker':{'yes':1,'no':0},'region':{'southeast':0,'southwest':1,'northeast':2,'northwest':3}},inplace=True)
 ### Evaluation: 
   - train_accuracy = metrics.r2_score(Y_train,train_prediction)
   - test_accuracy = metrics.r2_score(Y_test,test_prediction)
@@ -132,7 +132,7 @@
   - sns.countplot(x = 'Item_Fat_Content', data = big_mart_data)
 ### data preprocessing:
   - big_mart_data['Item_Weight'].fillna(big_mart_data['Item_Weight'].mean(),inplace=True)
-  - big_mart_data.loc[missing_values, 'Outlet_Size'] = big_mart_data.loc[missing_values, 'Outlet_Type'].apply(lambda x: mod    e_of_outlet_size)
+  - big_mart_data.loc[missing_values, 'Outlet_Size'] = big_mart_data.loc[missing_values, 'Outlet_Type'].apply(lambda x: mode_of_outlet_size)
   - big_mart_data.replace({'Item_Fat_Content': {'low fat':'Low Fat', 'LF':'Low Fat', 'reg': 'Regular'}}, inplace = True)
   - encoder = LabelEncoder()
   - big_mart_data['Item_Identifier'] = encoder.fit_transform(big_mart_data['Item_Identifier'])
