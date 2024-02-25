@@ -122,3 +122,19 @@
 ### Evaluation: 
   - train_accuracy = metrics.r2_score(Y_train,train_prediction)
   - test_accuracy = metrics.r2_score(Y_test,test_prediction)
+
+## big_mart_sales_prediction.py
+### model:
+  - XGBRegressor()
+### Visualization/statistical measure of data:
+  - sns.distplot(big_mart_data['Item_Weight'])
+  - sns.distplot(big_mart_data['Item_Visibility'])
+  - sns.countplot(x = 'Item_Fat_Content', data = big_mart_data)
+### data preprocessing:
+  - big_mart_data['Item_Weight'].fillna(big_mart_data['Item_Weight'].mean(),inplace=True)
+  - big_mart_data.loc[missing_values, 'Outlet_Size'] = big_mart_data.loc[missing_values, 'Outlet_Type'].apply(lambda x: mod    e_of_outlet_size)
+  - big_mart_data.replace({'Item_Fat_Content': {'low fat':'Low Fat', 'LF':'Low Fat', 'reg': 'Regular'}}, inplace = True)
+  - encoder = LabelEncoder()
+  - big_mart_data['Item_Identifier'] = encoder.fit_transform(big_mart_data['Item_Identifier'])
+### Evaluation: 
+  - test_score = metrics.r2_score(Y_test, test_data_predict)
